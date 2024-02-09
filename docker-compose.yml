@@ -1,0 +1,8 @@
+services:
+  nginx:
+    image: nginx
+    ports:
+      - 8999:80
+    volumes:
+      - ./config/index.html:/usr/share/nginx/html/index.html
+

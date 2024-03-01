@@ -1,8 +1,26 @@
+version: '3.8'
+networks:
+  frontend:
+    external:
+      name: reverse-proxy-docker-traefik_routing
+
 services:
   nginx:
+    restart: always
     image: nginx
-    ports:
-      - 8999:80
     volumes:
       - ./config/index.html:/usr/share/nginx/html/index.html
-
+    networks:
+      - frontend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=reverse-proxy-docker-traefik_routing"
+      # https
+      - "traefik.http.routers.nginx.rule=Host(`${NGINX_DOMAIN:-nginx.test}`)"
+      - "traefik.http.routers.nginx.tls=true"
+      - "traefik.http.routers.nginx.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.nginx.entrypoints=websecure"
+      # http (redirect to https)
+      - "traefik.http.routers.nginx-http.rule=Host(`${NGINX_DOMAIN:-nginx.test}`)"
+      - "traefik.http.routers.nginx-http.entrypoints=web"
+      - "traefik.http.routers.nginx-http.middlewares=redirect-to-https@file"

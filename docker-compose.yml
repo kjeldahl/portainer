@@ -18,7 +18,7 @@ services:
       # https
       - "traefik.http.routers.nginx.rule=Host(`${NGINX_DOMAIN:-nginx.test}`)"
       - "traefik.http.routers.nginx.tls=true"
-      - "traefik.http.routers.nginx.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.nginx.tls.certresolver=${CERTRESOLVER:-letsencrypt}"
       - "traefik.http.routers.nginx.entrypoints=websecure"
       # http (redirect to https)
       - "traefik.http.routers.nginx-http.rule=Host(`${NGINX_DOMAIN:-nginx.test}`)"

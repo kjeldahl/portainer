@@ -24,3 +24,4 @@ services:
       - "traefik.http.routers.nginx-http.rule=Host(`${NGINX_DOMAIN:-nginx.test}`)"
       - "traefik.http.routers.nginx-http.entrypoints=web"
       - "traefik.http.routers.nginx-http.middlewares=redirect-to-https@file"
+      - "traefik.http.routers.nginx-http.middlewares=geoblock@file"

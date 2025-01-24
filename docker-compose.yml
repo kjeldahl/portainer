@@ -9,7 +9,7 @@ services:
     restart: always
     image: nginx
     volumes:
-      - ./config/index.html:/usr/share/nginx/html/index.html
+      - ./config:/usr/share/nginx/html
     networks:
       - frontend
     labels:

@@ -9,7 +9,9 @@ services:
     restart: always
     image: nginx
     volumes:
-      - ./config:/usr/share/nginx/html
+      - ./config/index.html:/usr/share/nginx/html/index.html
+      - ./config/portainer.svg:/usr/share/nginx/html/portainer.svg
+      - ./config/TraefikProxy.svg:/usr/share/nginx/html/TraefikProxy.svg
     networks:
       - frontend
     labels:

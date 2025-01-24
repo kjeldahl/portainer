@@ -1,7 +1,111 @@
-<html>
-<head></head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Links</title>
+  <!-- Simple.css CDN -->
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <style>
+    body {
+      background-color: #121212;
+      /* Dark background */
+      color: #e0e0e0;
+      /* Light text color */
+    }
+
+    .container {
+      margin-top: 30px;
+    }
+
+    .link-box {
+      background: #1e1e1e;
+      /* Darker box background */
+      border: 1px solid #333;
+      /* Dark border */
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .link-title {
+      font-size: 1.2em;
+      margin: 0;
+    }
+
+    .link-description {
+      color: #bbb;
+      /* Slightly lighter description text */
+      font-size: 0.9em;
+    }
+
+    h1 {
+      color: #bbb;
+      /* Page title color matches link description */
+      text-align: center;
+    }
+
+    a {
+      color: #64b5f6;
+      /* Light blue link color */
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #bbdefb;
+      /* Lighter blue on hover */
+    }
+
+    .logo {
+      width: 150px;
+      /* Set logo width */
+      height: auto;
+      /* Maintain aspect ratio */
+    }
+  </style>
+</head>
+
 <body>
-<h1>Custom Page</h1>
+
+  <div class="container">
+    <div class="link-box">
+      <div>
+        <h2 class="link-title"><a href="https://reverse-proxy.kjeldahl.local/dashboard/#/" target="_blank">Reverse Proxy Dashboard</a></h2>
+        <p class="link-description">Manage and monitor your reverse proxy settings.</p>
+      </div>
+      <img class="logo" src="//TraefikProxy.svg" alt="Traefik Logo">
+    </div>
+
+    <div class="link-box">
+      <div>
+        <h2 class="link-title"><a href="https://portainer.kjeldahl.local/#!/5/docker/stacks" target="_blank">Portainer Stacks</a></h2>
+        <p class="link-description">View and manage your Docker stacks using Portainer.</p>
+      </div>
+      <img class="logo" src="//portainer.svg" alt="Portainer Logo">
+    </div>
+
+    <div class="link-box">
+      <div>
+        <h2 class="link-title"><a href="https://hass.kjeldahl.dk/config/dashboard" target="_blank">Home Assistant Dashboard</a></h2>
+        <p class="link-description">Control and monitor your smart home devices.</p>
+      </div>
+      <img class="logo" src="https://hass.kjeldahl.dk/static/icons/favicon-192x192.png" alt="Home Assistant Logo">
+    </div>
+
+    <div class="link-box">
+      <div>
+        <h2 class="link-title"><a href="https://ocis.kjeldahl.dk" target="_blank">OCIS</a></h2>
+        <p class="link-description">Access the OCIS application for file management and sharing.</p>
+      </div>
+      <img class="logo" src="https://ocis.kjeldahl.dk/themes/owncloud/assets/logo.svg" alt="OCIS Logo">
+    </div>
+  </div>
+
 </body>
 
 </html>

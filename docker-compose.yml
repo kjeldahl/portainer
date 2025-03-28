@@ -12,6 +12,7 @@ services:
       - ./config/index.html:/usr/share/nginx/html/index.html
       - ./config/portainer.svg:/usr/share/nginx/html/portainer.svg
       - ./config/TraefikProxy.svg:/usr/share/nginx/html/TraefikProxy.svg
+      - ./config/hoarder_logo.png:/usr/share/nginx/html/hoarder_logo.png
     networks:
       - frontend
     labels:
